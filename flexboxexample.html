@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html> <head> <style>
+    .flex-container {
+      display: flex;  flex-direction:row;
+      background-color: red;
+  }
+
+.flex-container > div {  /*div children of the flex container*/
+  background-color: #f1f1f1; 
+  margin: 10px;  padding: 20px;  font-size: 30px;
+}
+
+/* Responsive layout */
+@media (max-width: 600px) { 
+	 .flex-container{
+		 flex-direction:column;
+		 background-color: green;
+	  }
+	}
+</style>
+</head>
+
+
+
+<body>
+		<div class="flex-container">
+		  <div>row item 1 with box sized to fit</div>   
+		  <div>row item 2</div>  
+		  <div>row item 3</div>  
+		</div>
+		
+
+
+
+	<div class="flex-container">
+	  <div>row 2 item 1</div>   <div>row 2 item 2</div>  <div>3</div>  
+	</div>
+	
+	<p> We have a parent element with class flex-container holding 
+	children items.  Div is used to break up an HTML document into divisions, 
+	but is a common target to hold other things that can be styled with CSS.  
+	In this case we have two rows of 3 items in our container.  
+	 FlexBox is primarily used to linearly layout items. </p>
+	
+	<p>Direct child elements(s) of the flexible container automatically becomes flexible items.</p>
+	
+	</body>
+	</html>	
