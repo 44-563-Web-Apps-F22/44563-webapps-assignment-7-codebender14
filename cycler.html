@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html> 
+    <head> 
+        <title>Welcome to Cycler Page</title>
+    <style>
+    .flex-container {
+        display: flex;  
+        flex-direction:row;
+        background-color: black;
+    }
+    .flex-container > div {  
+        background-color:red; 
+        margin: 10px;  
+        padding: 20px;  
+        font-size: 30px;
+    }
+    @media (max-width: 600px) { 
+	.flex-container{
+		flex-direction:column;
+		background-color: white;
+	  }
+	}
+    </style>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"   
+    integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous"></script> 
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.min.js" 
+    integrity="sha384-7VPbUDkoPSGFnVtYi0QogXtr74QeVeeIs99Qfg5YCF+TidwNdjvaKZX19NZ/e6oz" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+</head>
+
+<body>
+    
+    <div class="container text-center">
+        <div class="container-fluid p-1 bg-info text-black text-center">
+            <h1>Sai Maneendra Pingili builds a cycler</h1>
+        </div><br>
+        <div class="flex-container" id="target">
+            <div class="cycler">row item 1</div>   
+            <div class="cycler">row item 2</div>  
+            <div class="cycler">row item 3</div>  
+        </div><br>
+    </div>
+    <div class="container text-center"></div>
+        <label for="inputElement">Enter a value <br></label>
+        <input class="form-control" type="text" name="input" id="inputElement" value="">
+        <br>
+        <p class="message"> 
+            Press Add Value button to create an new element to add it.
+        </p>
+        <div class="container text-left">
+            <button class="btn btn-success" type="submit" onclick="makeNewDiv()">Add Value</button>
+            <button class="btn btn-danger" type="submit" onclick="get()">Get</button>
+            <button class="btn btn-warning" type="submit" onclick="spin()">Spin</button>
+            <button class="btn btn-primary" type="submit" onclick="swap()">Swap</button>
+        </div>
+    </div>
+    
+    
+    <script>
+        function makeNewDiv() {
+            let element = document.createElement("div")
+            let value = document.getElementById("inputElement").value
+
+            element.innerHTML = value
+            element.className = "cycler"
+
+            let container = document.getElementById("target")
+            container.appendChild(element)
+        }
+    </script>
+    
+    <script>
+        function get() {
+            let cyclerItems = document.getElementsByClassName("cycler")
+            if(cyclerItems.length > 0) {
+                cyclerItems[cyclerItems.length-1].remove()
+            }
+        }
+
+        function spin() {
+            let cyclerItems = document.getElementsByClassName("cycler")
+            if(cyclerItems.length > 1) {
+                removedItem = cyclerItems[cyclerItems.length-1]
+                cyclerItems[cyclerItems.length-1].remove()
+                let container = document.getElementById("target")
+                container.insertBefore(removedItem, container.firstChild)
+            }
+        }
+        
+        function swap() {
+                let cyclerItems = document.getElementsByClassName("cycler")
+                let container = document.getElementById("target")
+                let a = Math.floor(Math.random() * cyclerItems.length)
+                let b = Math.floor(Math.random() * cyclerItems.length)
+                let firstInnerText = document.getElementsByClassName("cycler")[a]
+                let secondInnerText = document.getElementsByClassName("cycler")[b]
+                if(cyclerItems.length > 1) {
+                    let temp = firstInnerText.innerHTML
+                    firstInnerText.innerHTML = secondInnerText.innerHTML
+                    secondInnerText.innerHTML = temp
+                }
+            }
+    </script>
+<div class="container">
+    <ul class="pager">
+        <li class="previous">
+            <a href="reaction.html">Reaction Timer</a>
+        </li>
+    </ul>
+</div>
+</body>
+</html>	

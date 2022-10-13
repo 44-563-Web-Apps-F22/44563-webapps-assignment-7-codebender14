@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Let's Go Find Some Treasure</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"   
+    integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous"></script> 
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.min.js" 
+    integrity="sha384-7VPbUDkoPSGFnVtYi0QogXtr74QeVeeIs99Qfg5YCF+TidwNdjvaKZX19NZ/e6oz" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+</head>
+<body>
+
+<div class="container" style="text-align:center">
+    <div class="container-fluid p-5 bg-info text-center text-black">
+        <h1>Treasure Hunt By Sai Maneendra Pingili</h1>
+    </div><br>
+    <div class="d-flex justify-content-center p-6 bg-secondary text-black">  
+        <div class="p-2 bg-success flex-fill">Click on the chests to search for treasure</div>
+        <div class="p-2 bg-info flex-fill" id="chests">Number of chests checked is zero.</div>
+        <div class="p-2 bg-danger flex-fill" id="score">Score is unknown.</div>
+        <div class="p-2 bg-primary flex-fill" id="help">Help report</div>
+    </div><br>
+    <div class="container text-left text-black">
+        <button class="btn btn-danger" type="submit" onclick="resetGame()">Reset</button>
+    </div>
+    <br>
+</div>
+
+<div class="container">
+    <div class="row">
+        <div class="col-sm">
+            <img src="closed_treasure_chest.jpg" id="chest0" onclick="check(0)" alt="Treasure Chest" width="100" height="100">
+        </div>
+        <div class="col-sm">
+            <img src="closed_treasure_chest.jpg"  id="chest1" onclick="check(1)"alt="Treasure Chest" width="100" height="100">
+        </div>
+        <div class="col-sm">
+            <img src="closed_treasure_chest.jpg"  id="chest2" onclick="check(2)" alt="Treasure Chest" width="100" height="100">
+        </div>
+        <div class="col-sm">
+            <img src="closed_treasure_chest.jpg" id="chest3" onclick="check(3)" alt="Treasure Chest" width="100" height="100">
+        </div>
+        <div class="col-sm">
+            <img src="closed_treasure_chest.jpg"  id="chest4" onclick="check(4)" alt="Treasure Chest" width="100" height="100">
+        </div>
+    </div>
+</div>
+<div class="container">
+    <div class="row">
+        <div class="col-sm">
+            <img src="closed_treasure_chest.jpg" id="chest5" onclick="check(5)" alt="Treasure Chest" width="100" height="100">
+        </div>
+        <div class="col-sm">
+            <img src="closed_treasure_chest.jpg" id="chest6" onclick="check(6)" alt="Treasure Chest" width="100" height="100">
+        </div>
+        <div class="col-sm">
+            <img src="closed_treasure_chest.jpg" id="chest7" onclick="check(7)" alt="Treasure Chest" width="100" height="100">
+        </div>
+        <div class="col-sm">
+            <img src="closed_treasure_chest.jpg" id="chest8" onclick="check(8)" alt="Treasure Chest" width="100" height="100">
+        </div>
+        <div class="col-sm">
+            <img src="closed_treasure_chest.jpg" id="chest9" onclick="check(9)" alt="Treasure Chest" width="100" height="100">
+        </div>
+    </div>
+</div>
+<div class="container">
+    <div class="row">
+        <div class="col-sm">
+            <img src="closed_treasure_chest.jpg" id="chest10" onclick="check(10)" alt="Treasure Chest" width="100" height="100">
+        </div>
+        <div class="col-sm">
+            <img src="closed_treasure_chest.jpg" id="chest11" onclick="check(11)" alt="Treasure Chest" width="100" height="100">
+        </div>
+        <div class="col-sm">
+            <img src="help_me.jpg" alt="Help" id="help" onclick="help()" width="100" height="100">
+        </div>
+        <div class="col-sm">
+            <img src="closed_treasure_chest.jpg" id="chest13" onclick="check(13)" alt="Treasure Chest" width="100" height="100">
+        </div>
+        <div class="col-sm">
+            <img src="closed_treasure_chest.jpg" id="chest14" onclick="check(14)" alt="Treasure Chest" width="100" height="100">
+        </div>
+    </div>
+</div>
+<div class="container">
+    <div class="row">
+        <div class="col-sm">
+            <img src="closed_treasure_chest.jpg" id="chest15" onclick="check(15)" alt="Treasure Chest" width="100" height="100">
+        </div>
+        <div class="col-sm">
+            <img src="closed_treasure_chest.jpg" id="chest16" onclick="check(16)" alt="Treasure Chest" width="100" height="100">
+        </div>
+        <div class="col-sm">
+            <img src="closed_treasure_chest.jpg" id="chest17" onclick="check(17)" alt="Treasure Chest" width="100" height="100">
+        </div>
+        <div class="col-sm">
+            <img src="closed_treasure_chest.jpg" id="chest18" onclick="check(18)" alt="Treasure Chest" width="100" height="100">
+        </div>
+        <div class="col-sm">
+            <img src="closed_treasure_chest.jpg" id="chest19" onclick="check(19)" alt="Treasure Chest" width="100" height="100">
+        </div>
+    </div>
+</div>
+<div class="container">
+    <div class="row">
+        <div class="col-sm">
+            <img src="closed_treasure_chest.jpg" id="chest20" onclick="check(20)" alt="Treasure Chest" width="100" height="100">
+        </div>
+        <div class="col-sm">
+            <img src="closed_treasure_chest.jpg" id="chest21" onclick="check(21)" alt="Treasure Chest" width="100" height="100">
+        </div>
+        <div class="col-sm">
+            <img src="closed_treasure_chest.jpg" id="chest22" onclick="check(22)" alt="Treasure Chest" width="100" height="100">
+        </div>
+        <div class="col-sm">
+            <img src="closed_treasure_chest.jpg" id="chest23" onclick="check(23)" alt="Treasure Chest" width="100" height="100">
+        </div>
+        <div class="col-sm">
+            <img src="closed_treasure_chest.jpg" id="chest24" onclick="check(24)" alt="Treasure Chest" width="100" height="100">
+        </div>
+    </div>
+</div>
+</div>
+<br>
+
+<script>
+    const ids = ["chest0", "chest1", "chest2", "chest3", "chest4", "chest5", "chest6", "chest7",
+    "chest8", "chest9", "chest10", "chest11", "help", "chest13", "chest14", "chest15", "chest16",
+    "chest17", "chest18", "chest19", "chest20", "chest21", "chest22", "chest23", "chest24"]
+    let chestCount = 0
+    let score = 0
+    let lastCheck = 12
+    let treasureLocation = Math.floor(Math.random() * 24)
+
+    function check(position) {
+        image = document.getElementById(ids[position])
+        if(position == treasureLocation) {
+            image.src = "full_treasure.jpg"
+        } else {
+            image.src = "open_treasure_chest.jpg"
+        }
+        chestCount += 1
+        score += 1 
+        document.getElementById("chests").innerHTML = "Number of chests checked is " +chestCount;
+        document.getElementById("score").innerHTML = "Score is " + score
+        lastCheck = position;
+    }
+
+    function help() {
+        lastCheck_row = parseInt(lastCheck / 5)
+        lastCheck_column = parseInt(lastCheck % 5)
+        treasureLocation_row = parseInt(treasureLocation / 5)
+        treasureLocation_column = parseInt(treasureLocation % 5)
+        score += 2
+        document.getElementById("score").innerHTML = "Score is " + score
+        if(lastCheck_row == treasureLocation_row) {
+            if(lastCheck_column < treasureLocation_column) {
+                document.getElementById("help").innerHTML = "Right"
+            } else if(lastCheck_column > treasureLocation_column) {
+                document.getElementById("help").innerHTML = "Left"
+            } else {
+                document.getElementById("help").innerHTML = "Sorry, no help available"
+            }
+        } else if(lastCheck_column == treasureLocation_column) {
+            if(lastCheck_row < treasureLocation_row) {
+                document.getElementById("help").innerHTML = "Down"
+            } else if(lastCheck_row > treasureLocation_row) {
+                document.getElementById("help").innerHTML = "Up"
+            } else {
+                document.getElementById("help").innerHTML = "Sorry, no help available"
+            }
+        } else {
+            document.getElementById("help").innerHTML = "Sorry, no help available"
+        }
+    }
+    
+    function resetGame() {
+        treasureLocation = Math.floor(Math.random() * 24)
+        while(treasureLocation == 12) {
+            treasureLocation = Math.floor(Math.random() * 24)
+        }
+        chestCount = 0
+        score = 0
+        document.getElementById("chests").innerHTML = "Number of chests checked is zero"
+        document.getElementById("score").innerHTML = "Score is unknown"
+        document.getElementById("help").innerHTML = "Help report"
+        for(let i = 0; i < 24; i++) {
+            if(i != 12) {
+                document.getElementById(ids[i]).src = "closed_treasure_chest.jpg"
+            }
+        }
+    }
+</script>
+<div class="container">
+    <ul class="pager">
+        <li class="next">
+            <a href="reaction.html">Reaction Timer</a>
+        </li>
+    </ul>
+</div>
+</body>
+</html>

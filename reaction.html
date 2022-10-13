@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Welcome to Reaction Game</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"   
+    integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous"></script> 
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.min.js" 
+    integrity="sha384-7VPbUDkoPSGFnVtYi0QogXtr74QeVeeIs99Qfg5YCF+TidwNdjvaKZX19NZ/e6oz" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+</head>
+<body>
+    <!-- Part 5: Use setTimeout to create a reaction game.  You will press a button to start a countdown. -->
+    <div class="container text-center">
+        <div class="container-fluid p-5 bg-info text-black text-center">
+            <h1>Sai Maneendra Pingili Reaction Timer</h1>
+        </div><br>
+        <div class = "d-flex justify-content-center p-8 bg-warning text-white">
+            <div class="col-md">
+                <div class="p-6 bg-success flex-fill" id="target">Your time</div>
+            </div>
+            <div class="col-md">
+                <div class="p-6 bg-danger flex-fill" id="countdown">Count</div>
+            </div>
+        </div><br>
+        <div class="container text-left">
+            <button class="btn btn-danger" type="submit" onclick="startTime()">Start Timer</button>
+            <button class="btn btn-success" type="submit" onclick="recordReact()">React Now</button>
+        </div>
+    </div>
+    <!-- Part 5: Use setTimeout to create a reaction game.  You will press a button to start a countdown. -->
+    <script>
+        var myTime = Date.now()
+        function recordReact() {
+            myTime = Date.now()
+            console.log(myTime)
+        }
+    </script>
+
+    
+    <script>
+        function startTime() {
+            
+            let countdown = Math.floor(Math.random() * 9) + 2
+            console.log()
+            for (let i = 0; i < countdown; i++) {
+                setTimeout(() => {
+                    document.getElementById("countdown").innerHTML = i
+                }, ((countdown - 1 - i) * 1000));
+            }
+            setTimeout(() => {
+                if (myTime == undefined) {
+                    document.getElementById("target").innerHTML = "Too Slow"
+                } else {
+                    let buttonTime = Date.now()
+                    document.getElementById("target").innerHTML = "Time was " + (buttonTime - myTime)
+                }
+            }, 3000);
+        }
+    </script>
+<div class="container">
+    <ul class="pager">
+        <li class="previous">
+            <a href="treasure.html">Treasure Hunt</a>
+        </li>
+        <li class="next">
+            <a href="cycler.html">Cycler Page</a>
+        </li>
+    </ul>
+</div>
+</body>
+</html>
